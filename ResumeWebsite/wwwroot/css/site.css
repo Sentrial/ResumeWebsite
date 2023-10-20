@@ -17,7 +17,6 @@ html {
 html {
   position: relative;
   min-height: 100%;
-
 }
 
 header {
@@ -28,4 +27,9 @@ body {
     margin-bottom: 60px;
     color: white;
     background-color: black;
+    background-image: url("images/challenger.png");
+}
+
+ul.nav-bar {
+    color: orange;
 }

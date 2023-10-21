@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Resources\Images\Challenger.png" />
+  </ItemGroup>
+
 </Project>

@@ -15,16 +15,16 @@
             <div class="container-fluid">
 
                 <!--Home Button-->
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Brandon McCarthy</a>
+                <a id="home-button" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BRANDON MCCARTHY</a>
 
                 <!--Nav Buttons-->
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-content-center">
                     <ul id="navbar" class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">PRIVACY</a>
                         </li>
                     </ul>
                 </div>
@@ -39,13 +39,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <!--Footer-->
-    <footer class="footer">
-        <div class="container">
-            &copy; 2023 - Brandon McCarthy - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: white;
 }
 
 html {
@@ -20,16 +22,33 @@ html {
 }
 
 header {
-    background-color: black;
+    color: #2c6638;
 }
 
 body {
     margin-bottom: 60px;
     color: white;
     background-color: black;
-    background-image: url("images/challenger.png");
+    background-image: url(../Resources/Images/star.png);
+    background-repeat: round;
 }
 
-ul.nav-bar {
-    color: orange;
+div {
+}
+
+#navbar li a {
+    color: #2c6638;
+}
+#home-button {
+    color: #2c6638;
+}
+
+h1 {
+    color: #2c6638;
+    font-weight: 600;
+    /*text-shadow: 0 0 1em #2c6638, 0 0 1em #2c6638,  0 0 .1em white;*/
+}
+
+.nav-link {
+    color:#2c6638;
 }

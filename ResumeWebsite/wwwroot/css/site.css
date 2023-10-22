@@ -57,10 +57,17 @@ h1 {
     padding: 50px;
 }
 
-div.navbar,
+header {
+    border: 2px solid green;
+}
+
+.navbar {
+    border: 2px solid orange;
+    margin: 0;
+}
+
 .navbar div {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0px;
     border: 1px solid blue;
 }
 
@@ -68,24 +75,24 @@ div.navbar,
     align-items: center;
 }
 
+#home-button {
+    border: 1px solid white;
+}
+
 #home-button,
 h1 {
     color: #2c6638;
 }
 
-#navbar li a {
-    color: white;
-    font-size: 25px;
-    font-weight: 400;
+#navbar-div li {
+    border: 1px solid green;
 }
 
 #navbar-div li a {
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
     border: 1px solid white;
-    float: right;
-}
-
-#navbar li {
-    border: 1px solid green;
 }
 
 .container {
@@ -93,18 +100,19 @@ h1 {
 }
 
 .social-button-container {
-    padding: 20px;
-}
-
-.social-button {
+    display: inline-block;
     width: 100px;
     height: 100px;
-    background: none;
-    text-shadow: 0 0 0;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+.social-button-container a img {
+    align-content: center;
 }
 
 .social-icon {
-    max-width: 100px;
+    max-width: 100%;
     width: auto;
     height: auto;
 }

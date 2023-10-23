@@ -3,7 +3,13 @@
     src: url(../Resources/Fonts/Montserrat-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: montserrat-italic;
+    src: url(../Resources/Fonts/Montserrat-Italic-VariableFont_wght.ttf);
+}
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: montserrat-normal, Helvetica, Arial, sans-serif;
@@ -87,7 +93,7 @@ header div {
 }
 
 .navbar div {
-    padding: 0px;
+    padding: 10px 0px;
     /*border: 1px solid blue;*/
 }
 
@@ -96,16 +102,22 @@ header div {
 }
 
 #home-button {
+    margin-left: 20px;
     /*border: 1px solid white;*/
 }
 
 #home-button img {
+    transition: .5s;
     width: 80px;
     height: 80px;
     margin: 0px 20px;
 }
 
-#home-button,
+#home-button:hover img {
+    transition: .5s;
+    transform: rotate(360deg);
+}
+
 h1 {
     color: #2c6638;
 }
@@ -124,7 +136,7 @@ h1 {
     transition: all .5s;
     color: white;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: normal;
     /*border: 1px solid white;*/
 }
 
@@ -142,10 +154,12 @@ h1 {
 
 #name {
     padding: 0px;
+    margin-top: 20px;
 }
 
 #headline {
     text-shadow: white 0px 0px 20px;
+    font-family: montserrat-italic;
 }
 
 .social-button-container {

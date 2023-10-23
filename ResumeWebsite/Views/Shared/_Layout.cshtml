@@ -10,22 +10,33 @@
 </head>
 <body>
     <!--Header / Nav Bar-->
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
+    <header class="header">
+        <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="container-fluid">
 
                 <!--Home Button-->
-                <a id="home-button" class="navbar-brand text-center" asp-area="" asp-controller="Home" asp-action="Index">BRANDON<br>MCCARTHY</a>
+                <a id="home-button" class="navbar-brand text-center" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/resources/images/dagger-logo-white.png"/></a>
 
                 <!--Nav Buttons-->
                 <div id="navbar-div" class="navbar-buttons collapse d-sm-inline-flex justify-content-between align-content-center">
                     <ul class="navbar-nav flex-grow-1">
+
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                            <a class="nav-link" href="#main">HOME</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">PROJECTS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-me">ABOUT ME</a>
+                        </li>
+
                         <li class="nav-item" >
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">PRIVACY</a>
+                            <a class="nav-link" href="#contact">CONTACT</a>
                         </li>
+
                     </ul>
                 </div>
 

@@ -52,6 +52,26 @@ h1 {
     /*text-shadow: 0 0 1em #2c6638, 0 0 1em #2c6638,  0 0 .1em white;*/
 }
 
+.project-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+}
+
+.project-button {
+    background: none;
+    border: none;
+}
+
+.project-button:hover {
+    text-shadow: white 0 0 10px;
+}
+
+.project-button:focus {
+    text-shadow: white 0 0 10px;
+    text-decoration: underline;
+}
+
 .video {
     border: 2px solid white;
     box-shadow: white 0px 0px 20px;

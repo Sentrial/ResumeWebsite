@@ -52,6 +52,10 @@ h1 {
     /*text-shadow: 0 0 1em #2c6638, 0 0 1em #2c6638,  0 0 .1em white;*/
 }
 
+#projects {
+    margin-bottom: 50px;
+}
+
 .project-buttons {
     display: flex;
     justify-content: space-between;
@@ -64,12 +68,38 @@ h1 {
 }
 
 .project-button:hover {
+    transition: all .5s;
     text-shadow: white 0 0 10px;
 }
 
-.project-button:focus {
+button.selected {
+    transition: all .5s;
     text-shadow: white 0 0 10px;
     text-decoration: underline;
+}
+
+.project-content {
+    transition: all 1s;
+    border: 1px solid red;
+    position: absolute;
+    width: 88%;
+    visibility: visible;
+}
+
+.hide-project {
+    transition: all .5s;
+    transform: translate3d(-100%, 0, 0);
+    visibility: hidden;
+}
+
+.show-project {
+    transition: all .5s;
+    transform: translate3d(0%, 0%, 0);
+}
+
+.idle-project {
+    visibility: hidden;
+    transform: translate3d(100%, 0%, 0);
 }
 
 .video {

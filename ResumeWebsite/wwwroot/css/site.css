@@ -30,6 +30,12 @@ html {
   }
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     margin-bottom: 60px;
     color: white;
@@ -84,6 +90,7 @@ button.selected {
     position: absolute;
     width: 88%;
     visibility: visible;
+    overflow-x: hidden;
 }
 
 .hide-project {
@@ -100,6 +107,19 @@ button.selected {
 .idle-project {
     visibility: hidden;
     transform: translate3d(100%, 0%, 0);
+}
+
+.project-content div {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+}
+
+.project-content img {
+    border: 2px solid white;
+    width: 512px;
+    margin: 10px;
 }
 
 .video {
@@ -197,6 +217,11 @@ h1 {
     font-weight: 500;
     text-shadow: white 0px 0px 30px;
 }
+
+#projects-content-container {
+    height: 800px;
+}
+
 
 .container {
     min-width: 90%;

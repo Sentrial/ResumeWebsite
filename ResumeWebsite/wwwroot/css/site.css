@@ -58,9 +58,9 @@ h1 {
     /*text-shadow: 0 0 1em #2c6638, 0 0 1em #2c6638,  0 0 .1em white;*/
 }
 
-#projects {
-    margin-bottom: 50px;
-}
+
+
+/*Projects*/
 
 .project-buttons {
     display: flex;
@@ -84,36 +84,23 @@ button.selected {
     text-decoration: underline;
 }
 
-.project-content {
-    transition: all 1s;
-    border: 1px solid red;
-    position: absolute;
-    width: 88%;
-    visibility: visible;
-    overflow-x: hidden;
-}
-
-.hide-project {
-    transition: all .5s;
-    transform: translate3d(-100%, 0, 0);
-    visibility: hidden;
-}
-
-.show-project {
-    transition: all .5s;
-    transform: translate3d(0%, 0%, 0);
-}
-
-.idle-project {
-    visibility: hidden;
-    transform: translate3d(100%, 0%, 0);
-}
-
-.project-content div {
+.projects-content-container {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-content: center;
-    text-align: center;
+    overflow-x: scroll;
+}
+
+.projects-content-container::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-content-container .project-content {
+    flex: none;
+    padding: 20px;
+}
+
+.project-content h2 {
+    font-size: 100px;
 }
 
 .project-content img {
@@ -216,10 +203,6 @@ h1 {
     font-size: 27px;
     font-weight: 500;
     text-shadow: white 0px 0px 30px;
-}
-
-#projects-content-container {
-    height: 800px;
 }
 
 

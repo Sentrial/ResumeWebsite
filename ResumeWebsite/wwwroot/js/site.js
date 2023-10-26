@@ -27,7 +27,11 @@ window.addEventListener('scroll', function () {
 })
 
 
-document.getElementById("distressed-button").onclick = function () {
+
+
+
+
+/*document.getElementById("distressed-button").onclick = function () {
     console.log("distressed button clicked");
 
     document.getElementById("distressed-button").classList.add("selected");
@@ -90,4 +94,4 @@ function setProjectContent(name1, name2) {
 
     document.getElementById(name1).classList.add("idle-project");
     document.getElementById(name2).classList.add("idle-project");
-}
+}*/

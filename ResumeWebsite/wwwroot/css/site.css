@@ -65,6 +65,7 @@ h1 {
 .project-buttons {
     display: flex;
     justify-content: space-around;
+    padding: 0;
     z-index: 1;
 }
 
@@ -93,8 +94,7 @@ a.selected {
     position: relative;
     width: 100%;
     margin: 0 auto;
-/*    display: flex;
-    overflow-x: scroll;*/
+    padding: 0px;
 }
 
 .projects-slider {
@@ -102,11 +102,13 @@ a.selected {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    padding: 0px;
 }
 
 .projects-slider .project-content {
     flex: 1 0 100%;
     scroll-snap-align: start;
+    padding: 0px;
 }
 
 .distressed-selected {
@@ -128,13 +130,59 @@ a.selected {
     display: none;
 }
 
+.project-content div div {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+}
+
+.project-content div .content-showcase {
+    padding: 0px;
+}
+
+.project-content div div span {
+    margin: auto;
+    font-size: 20px;
+}
+
 .project-content h2 {
     font-size: 100px;
 }
 
+
+.project-content .image-stack {
+    content: ' ';
+    display: table;
+    clear: both;
+    padding: 0px;
+}
+
+.image-stack-item-top {
+    float: right;
+    width: 295%;
+    margin-top: -25%;
+    margin-right: -120%;
+    padding-left: 105%;
+    padding-right: 35%;
+    padding-bottom: 0%;
+    z-index: 1;
+}
+
+.image-stack-item-bottom {
+    float: left;
+    width: 200%;
+    margin-top: -4%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-top: 5%;
+    padding-right: 35%;
+    padding-left: 10%;
+}
+
 .project-content img {
     border: 2px solid white;
-    width: 512px;
+    box-shadow: white 0px 0px 10px;
+    width: 100%;
+    display: block;
     margin: 10px;
 }
 
@@ -159,6 +207,7 @@ header {
     margin: 0;
     width: 100%;
     position: fixed;
+    z-index: 10;
 }
 
 header div {

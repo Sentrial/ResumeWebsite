@@ -3,6 +3,7 @@
 
 // Write your JavaScript code.
 
+
 let prevScrollPos = window.pageYOffset;
 
 window.addEventListener('scroll', function () {
@@ -27,7 +28,28 @@ window.addEventListener('scroll', function () {
 })
 
 
+let projectsSliderContainer = document.querySelector(".projects-slider-container");
+let distressedButton = document.getElementById("distressed-button");
+let distressed2Button = document.getElementById("distressed2-button");
+let fafButton = document.getElementById("floor-after-floor-button");
 
+distressedButton.addEventListener("click", () => {
+    projectsContainer.classList.add("distressed-selected");
+    projectsContainer.classList.remove("distressed2-selected");
+    projectsContainer.classList.remove("floor-after-floor-selected");
+})
+
+distressed2Button.addEventListener("click", () => {
+    projectsContainer.classList.add("distressed2-selected");
+    projectsContainer.classList.remove("distressed-selected");
+    projectsContainer.classList.remove("floor-after-floor-selected");
+})
+
+fafButton.addEventListener("click", () => {
+    projectsContainer.classList.add("floor-after-floor-selected");
+    projectsContainer.classList.remove("distressed-selected");
+    projectsContainer.classList.remove("distressed2-selected");
+})
 
 
 

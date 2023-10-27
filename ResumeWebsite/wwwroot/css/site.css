@@ -64,39 +64,68 @@ h1 {
 
 .project-buttons {
     display: flex;
-    justify-content: space-between;
-    margin: 0 10%;
+    justify-content: space-around;
+    z-index: 1;
 }
 
 .project-button {
     background: none;
     border: none;
+    color: white;
+    text-decoration: none;
 }
 
 .project-button:hover {
     transition: all .5s;
     text-shadow: white 0 0 10px;
+    color: white;
+    
 }
 
-button.selected {
+a.selected {
     transition: all .5s;
     text-shadow: white 0 0 10px;
     text-decoration: underline;
+    font-weight: bold;
 }
 
-.projects-content-container {
+.projects-slider-container {
+    position: relative;
     width: 100%;
+    margin: 0 auto;
+/*    display: flex;
+    overflow-x: scroll;*/
+}
+
+.projects-slider {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
-.projects-content-container::-webkit-scrollbar {
+.projects-slider .project-content {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+}
+
+.distressed-selected {
+    transition: all .5s;
+    transform: translate3d(0, 0, 0);
+}
+
+.distressed2-selected {
+    transition: all .5s;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.floor-after-floor-selected {
+    transition: all .5s;
+    transform: translate3d(-200%, 0, 0);
+}
+
+.projects-slider::-webkit-scrollbar {
     display: none;
-}
-
-.projects-content-container .project-content {
-    flex: none;
-    padding: 20px;
 }
 
 .project-content h2 {

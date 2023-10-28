@@ -26,44 +26,87 @@ window.addEventListener('scroll', function () {
 })
 
 
-let projectsSliderContainer = document.querySelector(".projects-slider-container");
-let distressedButton = document.getElementById("distressed-button");
-let distressed2Button = document.getElementById("distressed2-button");
-let fafButton = document.getElementById("floor-after-floor-button");
+const track = document.querySelector(".slider__track");
+const slides = Array.from(track.children);
 
-distressedButton.addEventListener("click", (e) => {
-    window.scrollTo(0, prevScrollPos);
+const nextArrow = document.querySelector(".slider__button--right");
+const prevArrow = document.querySelector(".slider__button--left");
 
-    projectsSliderContainer.classList.add("distressed-selected");
-    projectsSliderContainer.classList.remove("distressed2-selected");
-    projectsSliderContainer.classList.remove("floor-after-floor-selected");
+const sliderNav = document.querySelector(".slider__nav");
+const navButtons = Array.from(sliderNav.children);
 
-    distressedButton.classList.add("selected");
-    distressed2Button.classList.remove("selected");
-    fafButton.classList.remove("selected");
-})
+const slideWidth = slides[0].getBoundingClientRect().width;
 
-distressed2Button.addEventListener("click", (e) => {
-    window.scrollTo(0, prevScrollPos);
-    
-    projectsSliderContainer.classList.add("distressed2-selected");
-    projectsSliderContainer.classList.remove("distressed-selected");
-    projectsSliderContainer.classList.remove("floor-after-floor-selected");
+// Arrange slides
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + "px";
+};
+slides.forEach(setSlidePosition);
 
-    distressed2Button.classList.add("selected");
-    distressedButton.classList.remove("selected");
-    fafButton.classList.remove("selected");
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+    currentSlide.classList.remove("current-slide");
+    targetSlide.classList.add("current-slide")
+};
 
-})
+const updateNavButtons = (currentButton, targetButton) => {
+    currentButton.classList.remove("current-slide");
+    targetButton.classList.add("current-slide");
+};
 
-fafButton.addEventListener("click", (e) => {
-    window.scrollTo(0, prevScrollPos);
+const updateSliderArrows = (targetIndex) => {
+    if (targetIndex === 0) {
+        prevArrow.classList.add("is-hidden");
+        nextArrow.classList.remove("is-hidden");
+    } else if (targetIndex === slides.length - 1) {
+        prevArrow.classList.remove("is-hidden");
+        nextArrow.classList.add("is-hidden");
+    } else {
+        prevArrow.classList.remove("is-hidden");
+        nextArrow.classList.remove("is-hidden");
+    }
+}
 
-    projectsSliderContainer.classList.add("floor-after-floor-selected");
-    projectsSliderContainer.classList.remove("distressed-selected");
-    projectsSliderContainer.classList.remove("distressed2-selected");
+// Left button clicked - move slides left
+prevArrow.addEventListener("click", e => {
+    const currentSlide = track.querySelector(".current-slide");
+    const prevSlide = currentSlide.previousElementSibling;
+    const currentButton = sliderNav.querySelector(".current-slide");
+    const prevButton = currentButton.previousElementSibling;
+    const prevIndex = slides.findIndex(slide => slide === prevSlide);
 
-    fafButton.classList.add("selected");
-    distressedButton.classList.remove("selected");
-    distressed2Button.classList.remove("selected");
-})
+    moveToSlide(track, currentSlide, prevSlide);
+    updateNavButtons(currentButton, prevButton);
+    updateSliderArrows(prevIndex);
+});
+
+
+// Right button clicked - move slides right
+nextArrow.addEventListener("click", e => {
+    const currentSlide = track.querySelector(".current-slide");
+    const nextSlide = currentSlide.nextElementSibling;
+    const currentButton = sliderNav.querySelector(".current-slide");
+    const nextButton = currentButton.nextElementSibling;
+    const nextIndex = slides.findIndex(slide => slide === nextSlide);
+
+    moveToSlide(track, currentSlide, nextSlide);
+    updateNavButtons(currentButton, nextButton);
+    updateSliderArrows(nextIndex);
+});
+
+
+sliderNav.addEventListener("click", e => {
+    const targetButton = e.target.closest("button");
+
+    if (!targetButton)
+        return;
+
+    const currentSlide = track.querySelector(".current-slide");
+    const currentButton = sliderNav.querySelector(".current-slide");
+    const targetIndex = navButtons.findIndex(button => button === targetButton)
+    const targetSlide = slides[targetIndex];
+
+    moveToSlide(track, currentSlide, targetSlide);
+    updateNavButtons(currentButton, targetButton);
+    updateSliderArrows(targetIndex);
+});

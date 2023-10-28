@@ -10,7 +10,69 @@
 <div id="projects" name="projects" class="text-center" background-size="cover">
     <h1>PROJECTS</h1>
 
-    <div class="projects-slider-container">
+    <div class="slider">
+
+        <div class="slider__nav">
+            <button class="slider__indicator current-slide">Distressed</button>
+            <button class="slider__indicator">Distressed 2</button>
+            <button class="slider__indicator">Floor After Floor</button>
+        </div>
+
+        <button class="slider__button slider__button--left is-hidden">
+            <img src="~/Resources/Images/left-arrow.png" />
+        </button>
+
+        <div class="slider__track-container">
+            <ul class="slider__track">
+                <li class="slider__slide current-slide">
+                    <div class="slider__content">
+                        <div>
+                            <h2>Distressed</h2>
+                            <a href="https://sentrial.itch.io/distressed">https://sentrial.itch.io/distressed</a>
+                            <p>
+                                <br />
+                                One hour until the glass cage drops... <br />
+                                Can you save the damsel in distress before it's too late? <br /><br />
+                                Uncover the mystery and solve the puzzle in this <strong>dual ending</strong> game!
+                                <br /><br />
+                                Distressed was delevoped solo as a summer passion project where I self-taught Unity and C#.
+                            </p>
+                        </div>
+                        <div class="image-stack">
+                            <div class="image-stack-item image-stack-item-bottom">
+                                <img src="~/resources/images/distressed-img1.jpg" id="d-image1" />
+                            </div>
+                            <div class="image-stack-item image-stack-item-top">
+                                <img src="~/resources/images/distressed-img2.jpg" id="d-image2" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="slider__slide">
+                    <div class="slider__content">
+                        <h2>Distressed2</h2>
+                    </div>
+                </li>
+                <li class="slider__slide">
+                    <div class="slider__content">
+                        <h2>Floor After Floor</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <button class="slider__button slider__button--right">
+            <img src="~/Resources/Images/right-arrow.png" />
+        </button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    @*<div class="projects-slider-container">
 
         <div class="project-buttons">
             <a href="#distressed-content" id="distressed-button" class="project-button selected">DISTRESSED</a>
@@ -92,7 +154,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 
 </div>
 

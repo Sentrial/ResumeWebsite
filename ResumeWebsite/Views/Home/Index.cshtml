@@ -2,101 +2,111 @@
     ViewData["Title"] = "Brandon McCarthy";
 }
 
-<div id="main" name="main" class="text-center">
+<section id="main" name="main" class="text-center">
     <h1 id="name">BRANDON MCCARTHY</h1>
     <p id="headline">every pebble holds infinite potential.</p>
-</div>
+</section>
 
-<div id="projects" name="projects" class="text-center" background-size="cover">
+<section id="projects" name="projects" class="text-center" background-size="cover">
     <h1>PROJECTS</h1>
 
-    <div class="projects-slider-container">
+    <div class="slider">
 
-        <div class="project-buttons">
-            <a href="#distressed-content" id="distressed-button" class="project-button selected">DISTRESSED</a>
-            <a href="#distressed2-content" id="distressed2-button" class="project-button">DISTRESSED 2</a>
-            <a href="#floor-after-floor-content" id="floor-after-floor-button" class="project-button">FLOOR AFTER FLOOR</a>
+        <div class="slider__nav">
+            <button class="slider__indicator current-slide">Distressed</button>
+            <button class="slider__indicator">Distressed 2</button>
+            <button class="slider__indicator">Floor After Floor</button>
         </div>
 
-        <div class="projects-slider">
-            <div id="distressed-content" class="project-content distressed">
-                <div>
-                    <h2>Distressed</h2>
-                    <a href="https://sentrial.itch.io/distressed">https://sentrial.itch.io/distressed</a>
-                    <div class="content-showcase">
-                        <span>
-                            One hour until the glass cage drops... <br />
-                            Can you save the damsel in distress before it's too late? <br /><br />
-                            Uncover the mystery and solve the puzzle in this <strong>dual ending</strong> game!
-                            <br /><br />
-                            Distressed was delevoped solo as a summer passion project where I self-taught Unity and C#.
-                        </span>
-                        <div class="image-stack">
-                            <div class="image-stack-item image-stack-item-bottom">
-                                <img src="~/resources/images/distressed-img1.jpg" id="d-image1" />
-                            </div>
-                            <div class="image-stack-item image-stack-item-top">
-                                <img src="~/resources/images/distressed-img2.jpg" id="d-image2" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <button class="slider__button slider__button--left is-hidden">
+            <img src="~/Resources/Images/left-arrow.png" />
+        </button>
 
-            <div id="distressed2-content" class="project-content distressed2">
-                <div>
-                    <h2>Distressed2</h2>
-                    <a>IN PROGRESS</a>
-                    <div class="content-showcase">
-                        <span>
-                            One hour until the glass cage drops... <br />
-                            Can you save the damsel in distress before it's too late? <br /><br />
-                            Uncover the mystery and solve the puzzle in this <strong>dual ending</strong> game!
-                            <br /><br />
-                            Distressed2 is a remake and redesign of the orignally distressed with more mechanics,
-                            puzzles, art, and secrets.
-                        </span>
+        <div class="slider__track-container">
+            <ul class="slider__track">
+                <li class="slider__slide current-slide">
+                    <div class="slider__content">
+                        <div>
+                            <h2>Distressed</h2>
+                            <a href="https://sentrial.itch.io/distressed">https://sentrial.itch.io/distressed</a>
+                            <p>
+                                <br />
+                                One hour until the glass cage drops... <br />
+                                Can you save the damsel in distress before it's too late? <br /><br />
+                                Uncover the mystery and solve the puzzle in this <strong>dual ending</strong> game!
+                                <br /><br />
+                                Distressed was delevoped solo as a summer passion project where I self-taught Unity and C#.
+                            </p>
+                        </div>
                         <div class="image-stack">
-                            <div class="image-stack-item image-stack-item-bottom">
+                            <div class="image-stack-item image-stack-item--bottom">
                                 <img src="~/resources/images/distressed-img1.jpg" id="d-image1" />
                             </div>
-                            <div class="image-stack-item image-stack-item-top">
+                            <div class="image-stack-item image-stack-item--top">
                                 <img src="~/resources/images/distressed-img2.jpg" id="d-image2" />
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div id="floor-after-floor-content" class="project-content floor-after-floor">
-                <div>
-                    <h2>Floor After Floor</h2>
-                    <a>IN PROGRESS</a>
-                    <div class="content-showcase">
-                        <span>
-                            You find yourself in an abandoned mall with one goal: <br/>
-                            <strong>Make money and get out.</strong><br />
-                            Fight your way through each floor, loot stores, and find the extraction point.
-                            <br /><br />
-                            Floor After Floor was delevoped in a group of 5 in a Games course at the University of Utah.
-                        </span>
+                </li>
+                <li class="slider__slide">
+                    <div class="slider__content">
+                        <div>
+                            <h2>Distressed 2</h2>
+                            <a>IN PROGRESS</a>
+                            <p>
+                                <br />
+                                One hour until the glass cage drops... <br />
+                                Can you save the damsel in distress before it's too late? <br /><br />
+                                Uncover the mystery and solve the puzzle in this <strong>dual ending</strong> game!
+                                <br /><br />
+                                Distressed2 is a remake and redesign of the orignally distressed with more mechanics,
+                                puzzles, art, and secrets.
+                            </p>
+                        </div>
                         <div class="image-stack">
-                            <div class="image-stack-item image-stack-item-bottom">
+                            <div class="image-stack-item image-stack-item--bottom">
                                 <img src="~/resources/images/distressed-img1.jpg" id="d-image1" />
                             </div>
-                            <div class="image-stack-item image-stack-item-top">
+                            <div class="image-stack-item image-stack-item--top">
                                 <img src="~/resources/images/distressed-img2.jpg" id="d-image2" />
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="slider__slide">
+                    <div class="slider__content">
+                        <div>
+                            <h2>Floor After Floor</h2>
+                            <a>IN PROGRESS</a>
+                            <p>
+                                <br />
+                                You find yourself in an abandoned mall with one goal: <br />
+                                <strong>Make money and get out.</strong><br />
+                                Fight your way through each floor, loot stores, and find the extraction point.
+                                <br /><br />
+                                Floor After Floor was delevoped in a group of 5 in a Games course at the University of Utah.
+                            </p>
+                        </div>
+                        <div class="image-stack">
+                            <div class="image-stack-item image-stack-item--bottom">
+                                <img src="~/resources/images/distressed-img1.jpg" id="d-image1" />
+                            </div>
+                            <div class="image-stack-item image-stack-item--top">
+                                <img src="~/resources/images/distressed-img2.jpg" id="d-image2" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
+
+        <button class="slider__button slider__button--right">
+            <img src="~/Resources/Images/right-arrow.png" />
+        </button>
     </div>
+</section>
 
-</div>
-
-<div id="content" name="content" class="text-center" background-size="cover">
+<section id="content" name="content" class="text-center" background-size="cover">
     <h1>MY FAVORITE CONTENT</h1>
 
     <span class="video-container">
@@ -106,13 +116,19 @@
     <span class="video-container">
         <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/ZeK3e3JKQT4?si=zL1H0EcUZ5U9TgDx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </span>
-</div>
+</section>
 
-<div id="about-me" name="about-me" class="text-center">
+<section id="about-me" name="about-me" class="text-center">
     <h1>ABOUT ME</h1>
-    <p>Lorem</p>
-    <img class="align-content-center" width="75%" height="75%" src="~/Resources/Images/Challenger.png" />
-</div>
+    <div class="about-me-content">
+        <div>
+            <p>Lorem</p>
+        </div>
+        <div>
+            <img class="align-content-center" src="~/Resources/Images/Challenger.png" />
+        </div>
+    </div>
+</section>
 
 <div id="contact" name="contact" class="text-center">
     <h1>CONTACT // LINKS</h1>

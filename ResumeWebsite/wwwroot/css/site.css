@@ -37,11 +37,14 @@ body {
 }
 
 body {
-    margin-bottom: 60px;
     color: white;
     background-color: black;
     background-image: url(../Resources/Images/star.png);
     background-repeat: repeat;
+}
+
+section {
+    padding: 40px 0px;
 }
 
 div {
@@ -138,58 +141,54 @@ header div {
 
 /*Projects*/
 
-.project-buttons {
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    z-index: 1;
-}
-
-.project-button {
-    background: none;
-    border: none;
-    color: white;
-    text-decoration: none;
-}
-
-.project-button:hover {
-    transition: all .5s;
-    text-shadow: white 0 0 10px;
-    color: white;
-    
-}
-
-a.selected {
-    transition: all .5s;
-    text-shadow: white 0 0 10px;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.projects-slider-container {
+.slider {
     position: relative;
     width: 100%;
+    height: 600px;
+    padding-top: 0px;
     margin: 0 auto;
-    padding: 0px;
 }
 
-
-.projects-slider {
+.slider__nav {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 0px;
+    justify-content: space-around;
 }
 
-.projects-slider .project-content {
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-    padding: 0px;
+.slider__indicator {
+    border: 0;
+    background: transparent;
 }
 
-.projects-slider::-webkit-scrollbar {
-    display: none;
+.slider__indicator {
+    transition: all .5s;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.slider__indicator:hover {
+    transition: all .5s;
+    font-size: 17px;
+    text-shadow: white 0px 0px 10px;
+}
+
+
+.slider__indicator.current-slide {
+    transition: all .5s;
+    text-shadow: white 0px 0px 7px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.slider__content {
+    width: 100%;
+    padding-top: 0px;
+    padding: 0px 100px;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+}
+
+.slider__content h2 {
+    font-weight: bold;
 }
 
 .project-content div div {
@@ -197,67 +196,88 @@ a.selected {
     grid-template-columns: 40% 1fr;
 }
 
-.project-content div .content-showcase {
-    padding: 0px;
+.slider__track-container {
+    padding-top: 0px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-.project-content div div span {
-    margin: auto;
-    font-size: 20px;
+.slider__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: all 1s;
 }
 
-.project-content h2 {
-    font-size: 50px;
+.slider__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
 }
 
-.project-content .image-stack {
+.slider__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    width: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.slider__button--left {
+    left: -25px;
+}
+
+.slider__button--right {
+    right: -25px;
+}
+
+.slider__button img {
+    width: 100%;
+    height: 100%;
+}
+
+.is-hidden {
+    display: none;
+}
+
+
+/* Image Stack */
+
+.image-stack {
     content: ' ';
     display: table;
     clear: both;
     padding: 0px;
 }
 
-.image-stack-item-top {
+.image-stack-item--top {
     float: right;
     width: 295%;
     margin-top: -25%;
-    margin-right: -120%;
+    margin-right: -80%;
     padding-left: 105%;
     padding-right: 35%;
-    padding-bottom: 0%;
     z-index: 1;
 }
 
-.image-stack-item-bottom {
+.image-stack-item--bottom {
     float: left;
-    width: 200%;
-    margin-top: -4%;
-    margin-left: 0%;
-    margin-right: -100%;
     padding-top: 5%;
-    padding-right: 35%;
     padding-left: 10%;
 }
 
-.project-content img {
+.image-stack-item img {
     border: 2px solid white;
     box-shadow: white 0px 0px 10px;
-    width: 100%;
-    display: block;
-    margin: 10px;
-}
-
-#d-image1 {
     width: 450px;
     height: auto;
 }
-
-#d-image2 {
-    width: 450px;
-    height: auto;
-}
-
-
 
 
 .video {
@@ -269,6 +289,18 @@ a.selected {
     display: inline-block;
     padding: 50px;
 }
+
+/* About Me*/
+
+.about-me-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-me-content img {
+    width: 100%;
+}
+
 
 
 .container {

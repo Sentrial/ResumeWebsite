@@ -32,11 +32,21 @@ const navButtons = Array.from(sliderNav.children);
 
 const slideWidth = slides[0].getBoundingClientRect().width;
 
+const backgroundImage = document.querySelector(".bg-image");
+const backgroundImageBlur = document.querySelector(".bg-blur-image")
+
 // Arrange slides
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + "px";
 };
 slides.forEach(setSlidePosition);
+
+const setBackgroundImageWidth = () => {
+    console.log("bg image width called");
+    backgroundImage.style.width = slides.length * 100 + "%";
+    backgroundImageBlur.style.width = slides.length * 100 + "%";
+}
+setBackgroundImageWidth();
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
     track.style.transform = "translateX(-" + targetSlide.style.left + ")";
@@ -47,6 +57,16 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
 const updateNavButtons = (currentButton, targetButton) => {
     currentButton.classList.remove("current-slide");
     targetButton.classList.add("current-slide");
+};
+
+const moveBackground = (slideIndex) => {
+    backgroundImage.style.transform = "translateX(-" + (slideIndex / slides.length) * 100 + "%)"
+    backgroundImageBlur.style.transform = "translateX(-" + (slideIndex / slides.length) * 100 + "%)"
+    backgroundImageBlur.style.opacity = "1";
+    setTimeout(() => {
+        console.log("called");
+        backgroundImageBlur.style.opacity = "0";
+    }, 500);
 };
 
 const updateSliderArrows = (targetIndex) => {
@@ -73,6 +93,7 @@ prevArrow.addEventListener("click", e => {
     moveToSlide(track, currentSlide, prevSlide);
     updateNavButtons(currentButton, prevButton);
     updateSliderArrows(prevIndex);
+    moveBackground(prevIndex);
 });
 
 
@@ -87,6 +108,7 @@ nextArrow.addEventListener("click", e => {
     moveToSlide(track, currentSlide, nextSlide);
     updateNavButtons(currentButton, nextButton);
     updateSliderArrows(nextIndex);
+    moveBackground(nextIndex);
 });
 
 
@@ -104,4 +126,5 @@ sliderNav.addEventListener("click", e => {
     moveToSlide(track, currentSlide, targetSlide);
     updateNavButtons(currentButton, targetButton);
     updateSliderArrows(targetIndex);
+    moveBackground(targetIndex);
 });

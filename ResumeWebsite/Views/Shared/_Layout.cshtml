@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
+    <div class="bg-image-container">
+        <div class="bg-image"></div>
+        <div class="bg-blur-image"></div>
+    </div>
+
     <!--Header / Nav Bar-->
     <header class="header">
         <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
@@ -49,11 +54,9 @@
     </header>
 
     <!--Render Body-->
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

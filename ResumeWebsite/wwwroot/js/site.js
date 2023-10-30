@@ -42,7 +42,6 @@ const setSlidePosition = (slide, index) => {
 slides.forEach(setSlidePosition);
 
 const setBackgroundImageWidth = () => {
-    console.log("bg image width called");
     backgroundImage.style.width = slides.length * 100 + "%";
     backgroundImageBlur.style.width = slides.length * 100 + "%";
 }
@@ -64,7 +63,6 @@ const moveBackground = (slideIndex) => {
     backgroundImageBlur.style.transform = "translateX(-" + (slideIndex / slides.length) * 100 + "%)"
     backgroundImageBlur.style.opacity = "1";
     setTimeout(() => {
-        console.log("called");
         backgroundImageBlur.style.opacity = "0";
     }, 500);
 };

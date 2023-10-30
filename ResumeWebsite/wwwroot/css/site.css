@@ -356,20 +356,46 @@ header div {
     color: #2c6638;
 }
 
-.about-me__content img {
-    width: 100%;
+#about-me img {
     border: 3px solid white;
     box-shadow: white 0px 0px 10px;
 }
 
+.about-me__top-images {
+    display: flex;
+}
+
+.about-me__top-images img {
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
+
+.about-me__bottom-images {
+    width: 40%
+}
+
+.about-me__bottom-images img {
+    width: 100%;
+}
+
+#about-me-img1 {
+    transform: rotate(-5deg);
+}
+
+#about-me-img2 {
+    transform: rotate(5deg);
+    z-index: -1;
+}
+
 .about-me__lists {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: left;
 }
 
 .about-me__lists div {
-    padding: 0px 40px;
+    padding: 0px 10px;
 }
 
 .about-me__lists ul li {
